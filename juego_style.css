@@ -9,23 +9,27 @@ body{
 }
 
 h1{
-  line-height:90%;
+  font-size:220%;
 }
 
 h2{
   margin-top:none;
-  font-size:150%;
-  line-height:120%;
+  font-size:100%;
+  vertical-align: middle;
+  text-align: center;
+  line-height:150%;
 }
 
 h3{
-  line-height:80%
+  margin-top: 3px;
 }
 
 #objetivo{
   width:200px;
   height:50px;
   border-radius: 25px;
+  margin-bottom:20px;
+  color:black;
 
 }
 

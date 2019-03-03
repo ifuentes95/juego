@@ -200,6 +200,9 @@ $(document).ready(function(){
                     if(levelcount > "5"){
                         $("#level").hide();
                         $("#winner").show();
+                        $("#winner").animate({
+                            fontSize: '+=50%'
+                            },500);
                         clearInterval(game_loop);
                     }
             }
@@ -269,6 +272,9 @@ $(document).ready(function(){
     function endGame(){
         clearInterval(game_loop);
         $("#loser").show();
+        $("#loser").animate({
+            fontSize: '+=50%'
+            },500);
         $("#level").hide();
         
 }
