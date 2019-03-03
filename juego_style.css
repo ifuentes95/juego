@@ -1,0 +1,138 @@
+body{
+  display:flex;
+  flex-direction:column;
+  font-family: 'Aleo', serif;
+  align-items:center;
+  color:white;
+  margin:0;
+  padding:0;
+}
+
+h1{
+  line-height:90%;
+}
+
+h2{
+  margin-top:none;
+  font-size:150%;
+  line-height:120%;
+}
+
+h3{
+  line-height:80%
+}
+
+#objetivo{
+  width:200px;
+  height:50px;
+  border-radius: 25px;
+
+}
+
+#caja{
+  display:flex;
+  flex-direction:column;
+  position:fixed;
+  top:177px;
+  align-items:center;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  max-width:100%; 
+  min-height: 100%;
+  max-height:100%;
+  z-index:-1000;
+  object-fit:cover;
+}
+
+#playGmeBtn {
+	background-color:gray;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:none;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family: 'Aleo', serif;
+	font-size:25px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #d1d1d1;
+}
+#playGmeBtn:hover {
+	background-color:gray;
+}
+#playGmeBtn:active {
+	position:relative;
+	top:1px;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+} 
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+} 
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: gray;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+
