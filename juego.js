@@ -36,8 +36,6 @@ $(document).ready(function(){
     var lengthSnake = lenth;
     var modePlay = modeValue;
     var snake_array;
-    //pintar el fondo
-    
     
     
     // Objetivo inicial
@@ -45,7 +43,7 @@ $(document).ready(function(){
     function init()
     {
         dir = "right"; //dirección por defecto
-        create_cobra(); //fuction crear serpiente
+        create_cobra(); //función crear serpiente
         eatfood(); // comida
         //Mover la serpiente con el tiempo -> dispara el paint
         if(typeof game_loop != "undefined") clearInterval(game_loop);
@@ -86,7 +84,6 @@ $(document).ready(function(){
             x: Math.round(Math.random()*(w-cw)/cw), 
             y: Math.round(Math.random()*(h-cw)/cw), 
         };
-        //Crea una celda de x/y entre 0-44
     }
     //Dibujar la serpiente
     function paint()
@@ -150,7 +147,7 @@ $(document).ready(function(){
             tail.x = nx; tail.y = ny;
         }
 
-
+        //Combinaciones que forman el color de la serpiente
         function combinaciones(col)
         {
             if(col =="green"){
@@ -218,13 +215,12 @@ $(document).ready(function(){
             //celdas de 10px de ancho
             paint_cell(c.x, c.y, bodycolor);
         }
-        //Dibujar comida
+        //Dibujar comida y redibujarla cada vez que se come una
         paint_colorfood1(food1.x, food1.y);
         paint_colorfood2(food2.x, food2.y);
         paint_colorfood3(food3.x, food3.y);
-        //Puntuación
-        //$("#level").text("Nivel ", objsindex);
           }
+    //pintar cada una de las comidas de un color primario
     function paint_colorfood1(x, y)
     {
         ctx.fillStyle = "blue";
@@ -249,7 +245,7 @@ $(document).ready(function(){
         ctx.strokeStyle = "red";
         ctx.strokeRect(x*cw, y*cw, cw, cw);
     }
-    //Serpiente del color de la comida
+    
 
     //Crear celdas
     function paint_cell(x, y, col)
@@ -269,6 +265,7 @@ $(document).ready(function(){
         }
         return false;
     }
+    //funcion que termina el juego
     function endGame(){
         clearInterval(game_loop);
         $("#loser").show();
