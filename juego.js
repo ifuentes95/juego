@@ -4,13 +4,16 @@ $(document).ready(function(){
     $("#restart").hide();
     $("#loser").hide();
     $("#lista").selectable();
+    //Refresca la página al darle al botón 'retry'
     $("#restart").click(function() {
         location.reload();
     });
     $("#playGmeBtn").click(function(){
+        //se muestran los elementos que forman el juego
         $("#caja").hide();
         $("#objetivo").show();
-		$("#canvas").show();
+        $("#canvas").show();
+        //determinamos el nivel de dificultad
         var checkval = $(".ui-selected").attr('id');
         console.log(checkval);
         if(checkval=="elemento1"){
@@ -93,11 +96,12 @@ $(document).ready(function(){
     //Dibujar la serpiente
     function paint()
     {
-        //Para que la serpiente no deje rastro
+        //El nivel de opacidad del relleno crea la estela de la serpiente
         ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
         ctx.strokeStyle = 'black';
         ctx.lineWidth=2;
-        //ctx.globalAlpha = 0.3;
+        //Este elemento baja la opacidad de los elementos dentro del canvas.
+        ctx.globalAlpha = 0.3;
         ctx.fillRect(0, 0, w, h);
         ctx.strokeRect(0, 0, w, h);
         var nx = snake_array[0].x;
