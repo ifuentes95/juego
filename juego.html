@@ -8,6 +8,7 @@
 	<link href="juego_style.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Aleo" rel="stylesheet">
 	<script src="jquery-3.3.1.js" type="text/javascript"></script>
+	<script src="jquery-ui.js" type="text/javascript"></script>
 	<script src="juego.js" type="text/javascript"></script>
 </head>
 
@@ -21,25 +22,20 @@
 	<h3 id="level"></h3>
 	<h3 id="winner">¡HAS GANADO!</h3>
 	<h3 id="loser">¡HAS PERDIDO!</h3>
+	<input name="Play" type="button" class="button" value="Retry" id="restart" />
 	<div id="objetivo"><h2 id="objetive">OBJETIVO</h2></div>
 	<canvas id="canvas" width="450" height="450" style="outline: none;"></canvas>
 
 	<div id="caja">
-	
-    <label class="container">
-	  <input type="radio" name="level" value="easy" id="level_0" checked="checked" />Fácil
-	  <span class="checkmark"></span>
-	</label>
-    <label class="container">
-	  <input type="radio" name="level" value="medium" id="level_1" />Medio
-	  <span class="checkmark"></span>
-	</label>
- 	<label class="container">
-	  <input type="radio" name="level" value="hard" id="level_2" />Difícil
-	  <span class="checkmark"></span>
-	</label>
+	<p>Selecciona el nivel de dificultad</p>
+	</br>
+		<ul id="lista">
+			<li id="elemento1">Fácil</li>
+			<li id="elemento2">Medio</li>
+			<li id="elemento3">Difícil</li>
+		</ul>
 	<br /><br />
-   <input name="Play" type="button" value="Play" id="playGmeBtn" /><br /><br />
+  <input name="Play" type="button" class="button" value="Play" id="playGmeBtn" /><br /><br />
     
 	<p>Utiliza las flechas para dirigir a la serpiente</p>
 	<p>Combina colores y pinta la serpiente del color indicado</p>

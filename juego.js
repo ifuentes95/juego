@@ -1,16 +1,22 @@
 $(document).ready(function(){
-    $("#objetive").hide();
+    $("#objetivo").hide();
     $("#winner").hide();
+    $("#restart").hide();
     $("#loser").hide();
+    $("#lista").selectable();
+    $("#restart").click(function() {
+        location.reload();
+    });
     $("#playGmeBtn").click(function(){
         $("#caja").hide();
-        $("#objetive").show();
+        $("#objetivo").show();
 		$("#canvas").show();
-        var checkval = $("input:radio:checked").val();
-        if(checkval=="easy"){
+        var checkval = $(".ui-selected").attr('id');
+        console.log(checkval);
+        if(checkval=="elemento1"){
             startGame(5, 200);
         }
-        else if(checkval=="medium"){
+        else if(checkval=="elemento2"){
             startGame(15, 120);
             }
         else{
@@ -38,8 +44,7 @@ $(document).ready(function(){
     var snake_array;
     
     
-    // Objetivo inicial
-    $("#objetivo").css('background-color', objetivos[objsindex]); 
+    // Objetivo inicial 
     function init()
     {
         dir = "right"; //dirección por defecto
@@ -197,6 +202,8 @@ $(document).ready(function(){
                     if(levelcount > "5"){
                         $("#level").hide();
                         $("#winner").show();
+                        $("#objetivo").hide();
+                        $("#restart").show();
                         $("#winner").animate({
                             fontSize: '+=50%'
                             },500);
@@ -273,6 +280,8 @@ $(document).ready(function(){
             fontSize: '+=50%'
             },500);
         $("#level").hide();
+        $("#objetivo").hide();
+        $("#restart").show();
         
 }
 }
